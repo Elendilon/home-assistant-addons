@@ -85,6 +85,7 @@ COMMAND="/usr/bin/autossh "\
 "-o StrictHostKeyChecking=no "\
 "-o ExitOnForwardFailure=yes "\
 "-o HostKeyAlgorithms=+ssh-rsa "\
+"-o PubkeyAcceptedAlgorithms=+ssh-rsa"\
 "-p ${SSH_PORT} -t -t "\
 "-i ${KEY_PATH}/autossh_rsa_key "\
 "${USERNAME}@${HOSTNAME}"
