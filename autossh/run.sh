@@ -54,6 +54,7 @@ TEST_COMMAND="/usr/bin/ssh "\
 "-o KbdInteractiveAuthentication=no "\
 "-o ChallengeResponseAuthentication=no "\
 "-o StrictHostKeyChecking=no "\
+"-o HostKeyAlgorithms=+ssh-rsa "\
 "-p ${SSH_PORT} -t -t "\
 "test@${HOSTNAME} "\
 "2>&1 || true"
@@ -81,6 +82,7 @@ COMMAND="/usr/bin/autossh "\
 "-o ServerAliveCountMax=3 "\
 "-o StrictHostKeyChecking=no "\
 "-o ExitOnForwardFailure=yes "\
+"-o HostKeyAlgorithms=+ssh-rsa "\
 "-p ${SSH_PORT} -t -t "\
 "-i ${KEY_PATH}/autossh_rsa_key "\
 "${USERNAME}@${HOSTNAME}"
