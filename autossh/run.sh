@@ -59,6 +59,8 @@ TEST_COMMAND="/usr/bin/ssh "\
 "test@${HOSTNAME} "\
 "2>&1 || true"
 
+bashio::log.info "Executing command: ${TEST_COMMAND}"
+
 if eval "${TEST_COMMAND}" | grep -q "Permission denied"; then
   bashio::log.info "Testing SSH connection... SSH service reachable on remote server"
 else
